@@ -9,7 +9,6 @@ services:
       - POSTGRES_DB=${DB_DATABASE}
       - POSTGRES_USER=${DB_USER}
       - POSTGRES_PASSWORD=${DB_PASSWORD}
-
   redis:
     image: redis:6-alpine
     ports:

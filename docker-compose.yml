@@ -1,0 +1,24 @@
+services:
+  database:
+    image: postgres:16-alpine3.19
+    ports:
+      - 5432:5432
+    volumes:
+      - psql-data:/var/lib/postgresql/data
+    environment:
+      - POSTGRES_DB=${DB_DATABASE}
+      - POSTGRES_USER=${DB_USER}
+      - POSTGRES_PASSWORD=${DB_PASSWORD}
+
+  redis:
+    image: redis:6-alpine
+    ports:
+      - 6379:6379
+
+  mailer:
+    image: axllent/mailpit:v1.18.4
+    ports:
+      - 1025:1025
+      - 8025:8025
+volumes:
+  psql-data:

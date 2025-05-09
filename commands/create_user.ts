@@ -14,7 +14,7 @@ export default class CreateUser extends BaseCommand {
   private email: string = ''
 
   async interact() {
-    this.username = await this.prompt.ask('Enter the full name')
+    this.username = await this.prompt.ask('Enter the username')
     this.password = await this.prompt.ask('Enter the password')
     this.email = await this.prompt.ask('Enter the email address')
   }

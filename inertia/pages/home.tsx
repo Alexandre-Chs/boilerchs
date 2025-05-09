@@ -1,11 +1,11 @@
 import { Head } from '@inertiajs/react'
-import Login from './auth/login'
+import Register from './auth/register'
 
 export default function Home() {
   return (
     <>
       <Head title="Homepage" />
-      <Login />
+      <Register />
     </>
   )
 }

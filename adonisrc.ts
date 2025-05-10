@@ -52,6 +52,7 @@ export default defineConfig({
     () => import('#start/routes'),
     () => import('#start/kernel'),
     () => import('#auth/routes'),
+    () => import('#src/dashboard/routes'),
   ],
 
   /*

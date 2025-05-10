@@ -12,6 +12,6 @@ export default class SignUpController {
     const user = await User.create({ username, email, password, terms })
     await auth.use('web').login(user)
 
-    response.redirect('/app')
+    response.redirect('/dashboard')
   }
 }

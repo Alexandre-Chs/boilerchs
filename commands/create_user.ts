@@ -12,16 +12,23 @@ export default class CreateUser extends BaseCommand {
   private username: string = ''
   private password: string = ''
   private email: string = ''
+  private terms: boolean = false
 
   async interact() {
     this.username = await this.prompt.ask('Enter the username')
     this.password = await this.prompt.ask('Enter the password')
     this.email = await this.prompt.ask('Enter the email address')
+    this.terms = await this.prompt.confirm('Do you accept the terms and conditions?')
   }
 
   async run() {
     this.logger.info('Creating user...')
-    await User.create({ username: this.username, password: this.password, email: this.email })
+    await User.create({
+      username: this.username,
+      password: this.password,
+      email: this.email,
+      terms: this.terms,
+    })
   }
 
   async completed() {

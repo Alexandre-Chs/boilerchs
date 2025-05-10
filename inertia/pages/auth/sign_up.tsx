@@ -29,11 +29,11 @@ const SignUpPage = () => {
     <AuthShell>
       <div className="flex flex-1 items-start justify-center px-8 md:px-24">
         <div className="w-full max-w-xl xl:mt-40 mt-4">
-          <h1 className="text-2xl xl:text-5xl font-bold mb-2 text-white">Create an account</h1>
+          <h1 className="text-2xl xl:text-5xl font-bold mb-2">Create an account</h1>
           <p className="text-md xl:text-lg text-secondary-foreground mb-8">
             Welcome! Join us and start your experience.
           </p>
-          <form onSubmit={handleSubmit} className="flex flex-col gap-6">
+          <form onSubmit={handleSubmit} className="flex flex-col gap-6" autoComplete="off">
             <div>
               <Label htmlFor="username">Username</Label>
               <Input
@@ -44,6 +44,7 @@ const SignUpPage = () => {
                 placeholder="Username"
                 value={data.username}
                 onChange={(e) => setData('username', e.target.value)}
+                autoComplete="off"
               />
               {errors.username && <div className="text-destructive text-sm">{errors.username}</div>}
             </div>
@@ -57,6 +58,7 @@ const SignUpPage = () => {
                 placeholder="Email"
                 value={data.email}
                 onChange={(e) => setData('email', e.target.value)}
+                autoComplete="off"
               />
               {errors.email && <div className="text-destructive text-sm">{errors.email}</div>}
             </div>
@@ -70,6 +72,7 @@ const SignUpPage = () => {
                 placeholder="Password"
                 value={data.password}
                 onChange={(e) => setData('password', e.target.value)}
+                autoComplete="new-password"
               />
               {errors.password && <div className="text-destructive text-sm">{errors.password}</div>}
             </div>

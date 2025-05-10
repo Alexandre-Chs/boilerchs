@@ -1,5 +1,5 @@
 import { Head } from '@inertiajs/react'
-import Register from './auth/register'
+import Register from './auth/sign_up'
 
 export default function Home() {
   return (

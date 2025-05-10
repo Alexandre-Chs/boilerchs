@@ -8,4 +8,4 @@
 */
 
 import router from '@adonisjs/core/services/router'
-router.on('/').renderInertia('home')
+router.on('/').renderInertia('landing').as('landing')

@@ -27,7 +27,7 @@ const SignUpPage = () => {
 
   return (
     <AuthShell>
-      <div className="flex flex-1 items-start justify-center px-8 md:px-24">
+      <div className="flex flex-1 items-center xl:items-start justify-center px-8 md:px-24">
         <div className="w-full max-w-xl xl:mt-40 mt-4">
           <h1 className="text-2xl xl:text-5xl font-bold mb-2">Create an account</h1>
           <p className="text-md xl:text-lg text-secondary-foreground mb-8">
@@ -99,7 +99,7 @@ const SignUpPage = () => {
           </form>
           <div className="font-extralight text-sm mt-8 text-secondary-foreground">
             Already have an account?{' '}
-            <a className="text-violet-500 underline" href="/login">
+            <a className="text-violet-500 underline" href="/sign-in">
               Login
             </a>
           </div>

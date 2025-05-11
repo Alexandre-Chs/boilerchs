@@ -12,7 +12,7 @@ export default class SignInController {
 
       const user = await User.verifyCredentials(email, password)
       await auth.use('web').login(user)
-      return response.redirect().toRoute('landing')
+      return response.redirect().toRoute('dashboard.show')
     } catch (error) {
       session.flash('errors', 'The provided username/email or password is incorrect')
       return response.redirect().toRoute('auth.sign-in.show')

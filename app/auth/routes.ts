@@ -11,3 +11,12 @@ router.post('/sign-up', [SignUpController, 'handle'])
 // sign in
 router.get('/sign-in', [SignInController, 'show']).use(middleware.guest()).as('auth.sign-in.show')
 router.post('/sign-in', [SignInController, 'handle'])
+
+// logout
+router
+  .post('/logout', async ({ auth, response }) => {
+    console.log('first')
+    await auth.use('web').logout()
+    return response.redirect('/sign-in')
+  })
+  .use(middleware.auth())

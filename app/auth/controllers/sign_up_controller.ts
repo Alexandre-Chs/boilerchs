@@ -1,5 +1,5 @@
 import { signUpValidator } from '#auth/validators'
-import User from '#models/user'
+import User from '#users/models/user'
 import type { HttpContext } from '@adonisjs/core/http'
 
 export default class SignUpController {

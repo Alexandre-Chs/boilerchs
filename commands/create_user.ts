@@ -1,4 +1,4 @@
-import User from '#models/user'
+import User from '#users/models/user'
 import { BaseCommand } from '@adonisjs/core/ace'
 import type { CommandOptions } from '@adonisjs/core/types/ace'
 

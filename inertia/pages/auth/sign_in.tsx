@@ -67,7 +67,7 @@ const SignInPage = () => {
               <div className="text-destructive text-sm">{message.flashMessages.errors}</div>
             )}
             <div className="font-extralight text-sm mt-4 text-secondary-foreground text-center">
-              <a className="text-violet-500 underline" href="forgot-password">
+              <a className="text-violet-500 underline" href="/forgot-password">
                 Forgot the password ?
               </a>
             </div>

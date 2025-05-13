@@ -22,7 +22,7 @@ const SignUpPage = () => {
 
   const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault()
-    post('/register')
+    post('/sign-up')
   }
 
   return (

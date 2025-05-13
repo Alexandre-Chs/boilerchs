@@ -51,7 +51,10 @@ export default defineConfig({
   preloads: [
     () => import('#start/routes'),
     () => import('#start/kernel'),
+    // auth
     () => import('#auth/routes'),
+    () => import('#auth/events/index'),
+    // application frontend
     () => import('#src/dashboard/routes'),
   ],
 

@@ -8,3 +8,9 @@ export const signUpValidator = vine.compile(
     terms: vine.accepted(),
   })
 )
+
+export const forgotPasswordValidator = vine.compile(
+  vine.object({
+    email: vine.string().email().toLowerCase(),
+  })
+)

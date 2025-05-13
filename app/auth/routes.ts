@@ -3,7 +3,7 @@ import router from '@adonisjs/core/services/router'
 
 const SignUpController = () => import('#auth/controllers/sign_up_controller')
 const SignInController = () => import('#auth/controllers/sign_in_controller')
-const ForgotPasswordController = () => import('#auth/controllers/forgot_passwords_controller')
+const ForgotPasswordController = () => import('#auth/controllers/forgot_password_controller')
 
 // sign up
 router.get('/sign-up', [SignUpController, 'show']).use(middleware.guest()).as('auth.sign-up.show')

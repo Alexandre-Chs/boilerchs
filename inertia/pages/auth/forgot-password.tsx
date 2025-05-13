@@ -1,4 +1,4 @@
-import { useForm } from '@inertiajs/react'
+import { useForm, usePage } from '@inertiajs/react'
 import { Button } from '~/components/elements/button'
 import { Input } from '~/components/elements/input'
 import { Label } from '~/components/elements/label'
@@ -9,6 +9,7 @@ type ForgotPasswordUser = {
 }
 
 const ForgotPasswordPage = () => {
+  const message = usePage<{ flashMessages: { success: string } }>().props
   const { data, setData, post, processing } = useForm<ForgotPasswordUser>({
     email: '',
   })
@@ -16,6 +17,7 @@ const ForgotPasswordPage = () => {
   const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault()
     post('/forgot-password')
+    data.email = ''
   }
 
   return (
@@ -40,6 +42,9 @@ const ForgotPasswordPage = () => {
                 autoComplete="off"
               />
             </div>
+            {message.flashMessages?.success && (
+              <div className="text-green-500 text-sm">{message.flashMessages.success}</div>
+            )}
             <Button type="submit" className="mt-2" disabled={processing}>
               Send reset link
             </Button>

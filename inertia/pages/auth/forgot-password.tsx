@@ -40,6 +40,7 @@ const ForgotPasswordPage = () => {
                 value={data.email}
                 onChange={(e) => setData('email', e.target.value)}
                 autoComplete="off"
+                autoFocus
               />
             </div>
             {message.flashMessages?.success && (

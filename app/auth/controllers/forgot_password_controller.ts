@@ -10,7 +10,7 @@ export default class ForgotPasswordController {
   constructor(private passwordResetService: PasswordResetService) {}
 
   async show({ inertia }: HttpContext) {
-    return inertia.render('auth/forgot-password')
+    return inertia.render('auth/forgot_password')
   }
 
   async handle({ request, response, session }: HttpContext) {

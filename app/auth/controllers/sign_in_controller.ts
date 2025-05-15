@@ -9,7 +9,6 @@ export default class SignInController {
   async handle({ request, response, auth, session }: HttpContext) {
     try {
       const { email, password } = request.only(['email', 'password'])
-
       const user = await User.verifyCredentials(email, password)
       await auth.use('web').login(user)
       return response.redirect().toRoute('dashboard.show')

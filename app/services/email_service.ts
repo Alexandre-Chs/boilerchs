@@ -18,7 +18,7 @@ export default class EmailService {
           companyLogoUrl: this.companyLogoUrl,
           projectName: this.companyName,
           year: this.year,
-          resetUrl: `${this.appUrl}/auth/reset-password/${token}`,
+          resetUrl: `${this.appUrl}/reset-password/${token}`,
         })
     })
   }

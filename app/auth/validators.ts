@@ -14,3 +14,9 @@ export const forgotPasswordValidator = vine.compile(
     email: vine.string().email().toLowerCase(),
   })
 )
+
+export const forgotPasswordTokenValidator = vine.compile(
+  vine.object({
+    token: vine.string().minLength(1),
+  })
+)

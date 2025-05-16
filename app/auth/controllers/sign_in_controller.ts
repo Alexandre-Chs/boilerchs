@@ -13,7 +13,7 @@ export default class SignInController {
       await auth.use('web').login(user)
       return response.redirect().toRoute('dashboard.show')
     } catch (error) {
-      session.flash('errors', 'The provided username/email or password is incorrect')
+      session.flash('errors', 'The provided email or password is incorrect')
       return response.redirect().toRoute('auth.sign-in.show')
     }
   }

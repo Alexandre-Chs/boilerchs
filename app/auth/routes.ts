@@ -25,7 +25,8 @@ router
   .as('auth.forgot-password.handle')
 
 // reset password
-router.get('/reset-password/:token', [ResetPasswordController, 'handle'])
+router.get('/reset-password/:token', [ResetPasswordController, 'show'])
+router.post('/reset-password/:token', [ResetPasswordController, 'handle'])
 
 // logout
 router

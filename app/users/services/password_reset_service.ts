@@ -21,7 +21,6 @@ export default class PasswordResetService {
   }
 
   async deleteToken(user: User) {
-    console.log(await ForgotPassword.query().where('userId', user.id).toSQL())
     await ForgotPassword.query().where('userId', user.id).delete()
   }
 }

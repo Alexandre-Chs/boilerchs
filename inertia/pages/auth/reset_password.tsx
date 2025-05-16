@@ -1,5 +1,6 @@
 import { useForm } from '@inertiajs/react'
 import { Label } from '@radix-ui/react-label'
+import { useState } from 'react'
 import { Button } from '~/components/elements/button'
 import { Input } from '~/components/elements/input'
 import AuthShell from '~/components/layouts/auth_shell'
@@ -9,13 +10,22 @@ type ResetPasswordUser = {
 }
 
 const ResetPasswordPage = ({ token }: { token: string }) => {
+  const [confirmPassword, setConfirmPassword] = useState('')
+  const [error, setError] = useState('')
+
   const { data, setData, post, processing } = useForm<ResetPasswordUser>({
     password: '',
   })
 
   const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault()
-    post('/reset-password')
+
+    if (data.password !== confirmPassword) {
+      setError('Passwords do not match')
+      return
+    }
+
+    post(`/reset-password/${token}`)
     data.password = ''
   }
 
@@ -42,6 +52,24 @@ const ResetPasswordPage = ({ token }: { token: string }) => {
                 autoFocus
               />
             </div>
+            <div>
+              <Label htmlFor="password">Confirm password</Label>
+              <Input
+                className="h-12 text-base"
+                type="password"
+                id="confirm-password"
+                name="confirm-password"
+                placeholder="Confirm Password"
+                value={confirmPassword}
+                onChange={(e) => {
+                  setError('')
+                  setConfirmPassword(e.target.value)
+                }}
+                autoComplete="off"
+                autoFocus
+              />
+            </div>
+            {error && <div className="text-red-500 text-sm">{error}</div>}
             <Button type="submit" className="mt-2" disabled={processing}>
               Reset password
             </Button>

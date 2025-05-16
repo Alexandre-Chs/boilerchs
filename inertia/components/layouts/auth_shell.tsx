@@ -1,9 +1,6 @@
 import React from 'react'
 import { MoveRight } from 'lucide-react'
 
-// design here a wrapper for all the auth pages:
-// signin,signup, signout, forgot password
-
 const AuthShell = ({ children }: { children: React.ReactNode }) => {
   return (
     <div className="flex h-screen">
@@ -15,7 +12,7 @@ const AuthShell = ({ children }: { children: React.ReactNode }) => {
         />
         <div className="absolute inset-0 flex flex-col justify-between">
           <div className="flex items-center justify-between w-full p-16">
-            <div className="font-bold text-white">LOGO</div>
+            <img src="images/logo.png" alt="Logo" className="w-10 h-10" />
             <a href="/" className="flex items-center gap-x-2 text-sm group text-white">
               Back to website
               <span className="group-hover:translate-x-1 transition-transform">

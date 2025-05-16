@@ -57,6 +57,7 @@
     "vite": "^6.1.0"
   },
   "dependencies": {
+    "@adonisjs/ally": "^5.1.0",
     "@adonisjs/auth": "^9.3.1",
     "@adonisjs/core": "^6.17.2",
     "@adonisjs/cors": "^2.2.1",

@@ -5,6 +5,7 @@ const SignUpController = () => import('#auth/controllers/sign_up_controller')
 const SignInController = () => import('#auth/controllers/sign_in_controller')
 const ForgotPasswordController = () => import('#auth/controllers/forgot_password_controller')
 const ResetPasswordController = () => import('#auth/controllers/reset_password_controller')
+const GoogleController = () => import('#auth/controllers/google_controller')
 
 // sign up
 router.get('/sign-up', [SignUpController, 'show']).use(middleware.guest()).as('auth.sign-up.show')
@@ -35,3 +36,10 @@ router
     return response.redirect('/sign-in')
   })
   .use(middleware.auth())
+
+// providers
+router.get('/google/redirect', ({ ally }) => {
+  return ally.use('google').redirect()
+})
+
+router.get('/google/callback', [GoogleController, 'handle'])

@@ -128,4 +128,10 @@
   body {
     @apply bg-background text-foreground !font-outfit;
   }
+
+  .navbar-text {
+    text-shadow:
+      0 0 4px rgb(0 0 0 / 23%),
+      0 0 2px rgb(0 0 0 / 30%);
+  }
 }

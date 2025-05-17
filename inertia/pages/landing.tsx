@@ -34,12 +34,12 @@ export default function LandingPage() {
           }}
         />
 
-        <header className="px-6 w-full fixed top-0 z-10 backdrop-blur-sm">
+        <header className="px-6 w-full fixed top-0 z-10 md:backdrop-blur-sm">
           <Navbar />
         </header>
 
         {/* headline */}
-        <div className="max-w-3xl mx-auto flex flex-col items-center justify-center pt-[250px]">
+        <div className="max-w-3xl mx-auto flex flex-col items-center justify-center pt-[150px] md:pt-[250px]">
           <Badge
             variant="outline"
             className="font-medium mb-6 text-sm px-4 py-2 bg-white/5 border-white/10"
@@ -47,12 +47,12 @@ export default function LandingPage() {
             <Flame size={16} className="mr-2 text-orange-400" />
             Unlock New Possibilities
           </Badge>
-          <h1 className="text-4xl sm:text-5xl lg:text-7xl font-extrabold tracking-tight text-foreground mb-6 mt-4 text-center">
+          <h1 className="text-5xl lg:text-7xl font-extrabold tracking-tight text-foreground mb-6 mt-4 text-center">
             Effortless
             <br />
             App Launch
           </h1>
-          <p className="text-foreground/50 font-light">
+          <p className="md:text-base text-md text-center max-w-xs mx-auto md:max-w-full text-foreground/50 font-light">
             Simplify your launch process and amplify your impact from day one.
           </p>
         </div>
@@ -60,13 +60,16 @@ export default function LandingPage() {
         {/* cta */}
 
         <div className="mt-8 flex justify-center">
-          <button className="cursor-pointer px-8 py-2 rounded-xl bg-violet-800 hover:bg-violet-500 text-white font-semibold text-lg transition">
+          <a
+            href="/sign-in"
+            className="cursor-pointer px-8 py-2 rounded-xl bg-violet-800 hover:bg-violet-500 text-white font-semibold text-lg transition"
+          >
             Get started for free
-          </button>
+          </a>
         </div>
 
         {/* image presentation */}
-        <div className="relative w-full max-w-5xl mx-auto mt-44 pb-22">
+        <div className="relative w-full max-w-5xl mx-auto mt-22 md:mt-44 pb-22 px-8 md:px-0">
           <div
             className="absolute -inset-2 rounded-2xl bg-gradient-to-t from-zinc-700 via-blue-800 to-violet-900 opacity-40 blur-2xl"
             aria-hidden="true"
@@ -80,7 +83,7 @@ export default function LandingPage() {
         </div>
 
         {/* features */}
-        <section className="w-full bg-white pt-24" id="features">
+        <section className="w-full bg-white pt-24 md:pt-24 -mt-8 md:mt-0" id="features">
           <div className="max-w-5xl mx-auto px-4">
             <div className="text-center mb-16">
               <Badge
@@ -214,12 +217,12 @@ export default function LandingPage() {
           </div>
         </section>
 
-        <div className="w-full flex justify-center items-center py-24 bg-white">
+        <div className="w-full flex justify-center items-center py-24 bg-white -mt-8 md:mt-0">
           <div className="h-1 w-24 bg-neutral-200 rounded-full opacity-80" />
         </div>
 
         {/* FAQ Section */}
-        <section className="w-full bg-white" id="faq">
+        <section className="w-full bg-white -mt-8 md:mt-0" id="faq">
           <div className="max-w-5xl mx-auto px-4">
             <div className="flex flex-col items-center mb-10">
               <div className="w-12 h-12 flex items-center justify-center rounded-full bg-violet-100 mb-4">
@@ -283,12 +286,12 @@ export default function LandingPage() {
           </div>
         </section>
 
-        <div className="w-full flex justify-center items-center py-24 bg-white">
+        <div className="w-full flex justify-center items-center py-24 bg-white -mt-8 md:mt-0">
           <div className="h-1 w-24 bg-neutral-200 rounded-full opacity-80" />
         </div>
 
         {/* Pricing Section */}
-        <section className="w-full bg-white" id="pricing">
+        <section className="w-full bg-white -mt-8 md:mt-0" id="pricing">
           <div className="max-w-6xl mx-auto px-4">
             <div className="text-center mb-16">
               <Badge
@@ -419,11 +422,11 @@ export default function LandingPage() {
           </div>
         </section>
 
-        <div className="w-full flex justify-center items-center py-24 bg-white">
+        <div className="w-full flex justify-center items-center py-24 bg-white -mt-8 md:mt-0">
           <div className="h-1 w-24 bg-neutral-200 rounded-full opacity-80" />
         </div>
 
-        <section className="w-full bg-white pb-24" id="about">
+        <section className="w-full bg-white pb-24 -mt-8 md:mt-0" id="about">
           <div className="max-w-2xl mx-auto px-4 text-center">
             <h2 className="text-3xl font-extrabold text-black mb-4">About</h2>
             <p className="text-neutral-700 text-lg">
@@ -511,14 +514,16 @@ export default function LandingPage() {
                 <h3 className="text-xl font-semibold mb-6">Follow Us</h3>
                 <div className="flex space-x-4 mb-8">
                   <a
-                    href="#"
+                    href="https://x.com/AlexandreChsDev"
+                    target="_blank"
                     className="bg-gray-800 p-2 rounded-full hover:bg-violet-600 transition-colors"
                     aria-label="Twitter"
                   >
                     <Twitter size={20} />
                   </a>
                   <a
-                    href="#"
+                    href="https://github.com/Alexandre-Chs"
+                    target="_blank"
                     className="bg-gray-800 p-2 rounded-full hover:bg-violet-600 transition-colors"
                     aria-label="Github"
                   >

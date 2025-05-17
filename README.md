@@ -16,7 +16,16 @@ A modern fullstack boilerplate to kickstart your next project.
 
 ## ✨ Features
 
-### 1. Rapid User Creation
+### 1. Landing Page (Ready to Use)
+
+- Modern, high-converting landing page built with React, Inertia, and Tailwind CSS.
+- Clean, professional design with all sections ready for SaaS or product launch.
+- Easily customizable for your brand.
+  ![alt text](/public/repo/landing.png)
+
+---
+
+### 2. Rapid User Creation
 
 - Use the `create:user` ace command to quickly create users from the CLI.
 - Example:
@@ -26,7 +35,7 @@ A modern fullstack boilerplate to kickstart your next project.
 
 ---
 
-### 2. Ready-to-use Auth Pages
+### 3. Ready-to-use Auth Pages
 
 - Prebuilt, easily customizable pages for:
   - Sign Up
@@ -39,14 +48,14 @@ A modern fullstack boilerplate to kickstart your next project.
 
 ---
 
-### 3. Google OAuth Provider
+### 4. Google OAuth Provider
 
 - Users can sign up or log in with Google.
 - Fully integrated with AdonisJS session authentication.
 
 ---
 
-### 4. Mailer Setup with Resend
+### 5. Mailer Setup with Resend
 
 - Mailer is preconfigured for Resend (and SMTP).
 - Email templates (Edge + MJML) are ready for:
@@ -56,7 +65,7 @@ A modern fullstack boilerplate to kickstart your next project.
 
 ---
 
-### 5. Modular & Extensible
+### 6. Modular & Extensible
 
 - Clean separation of concerns (auth, dashboard, services, etc.)
 - Easily extend or swap out UI, mailers, or providers.

@@ -1,18 +1,42 @@
 import { Head } from '@inertiajs/react'
 import { Badge } from '~/components/elements/badge'
 import Navbar from './landing/navbar'
-import { BarChart, Check, Flame, Github, Rocket, Send, Shield, Twitter, X, Zap } from 'lucide-react'
+import {
+  BarChart,
+  Check,
+  Flame,
+  Github,
+  Rocket,
+  Send,
+  Shield,
+  Twitter,
+  Users,
+  X,
+  Zap,
+} from 'lucide-react'
 import {
   Accordion,
   AccordionContent,
   AccordionItem,
   AccordionTrigger,
 } from '~/components/elements/accordion'
+import { userTestimonials } from '~/utils/user_testimonials'
 
 export default function LandingPage() {
   return (
     <>
       <Head title="Landing page" />
+
+      {/* Sticky CTA that follows user scroll */}
+      <div className="fixed bottom-6 left-0 right-0 z-30 flex justify-center pointer-events-none cursor-pointer">
+        <a
+          href="/sign-in"
+          className="animate-bounce-subtle shadow-lg flex items-center bg-violet-700 hover:bg-violet-600 text-white font-bold py-3 px-6 rounded-full transition-all duration-300 pointer-events-auto"
+        >
+          <span className="mr-2">Get Started Now</span>
+          <Rocket size={16} />
+        </a>
+      </div>
 
       <div className="relative landing">
         <div
@@ -55,10 +79,16 @@ export default function LandingPage() {
           <p className="md:text-base text-md text-center max-w-xs mx-auto md:max-w-full text-foreground/50 font-light">
             Simplify your launch process and amplify your impact from day one.
           </p>
+          {/* Badge users used it */}
+          <div className="flex items-center mt-6 bg-white/10 rounded-full px-5 py-2">
+            <Users size={16} className="text-violet-400 mr-2" />
+            <p className="text-sm text-white/70">
+              <span className="font-bold text-white">100+</span> developers already using BoilerChs
+            </p>
+          </div>
         </div>
 
         {/* cta */}
-
         <div className="mt-8 flex justify-center">
           <a
             href="/sign-in"
@@ -102,7 +132,7 @@ export default function LandingPage() {
 
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
               {/* Card 1 */}
-              <div className="bg-white rounded-xl p-8 shadow-md hover:shadow-lg transition-all duration-300 border border-neutral-100 group flex flex-col items-start">
+              <div className="bg-white rounded-xl p-8 transition-all duration-300 border border-neutral-100 group flex flex-col items-start">
                 <div className="mb-5 inline-flex items-center justify-center w-12 h-12 rounded-xl bg-violet-100 text-violet-700 group-hover:bg-violet-700 group-hover:text-white transition-colors duration-300">
                   <Rocket className="w-6 h-6" />
                 </div>
@@ -124,7 +154,7 @@ export default function LandingPage() {
               </div>
 
               {/* Card 2 */}
-              <div className="bg-white rounded-xl p-8 shadow-md hover:shadow-lg transition-all duration-300 border border-neutral-100 group flex flex-col items-start">
+              <div className="bg-white rounded-xl p-8 transition-all duration-300 border border-neutral-100 group flex flex-col items-start">
                 <div className="mb-5 inline-flex items-center justify-center w-12 h-12 rounded-xl bg-violet-100 text-violet-700 group-hover:bg-violet-700 group-hover:text-white transition-colors duration-300">
                   <Shield className="w-6 h-6" />
                 </div>
@@ -146,7 +176,7 @@ export default function LandingPage() {
               </div>
 
               {/* Card 3 */}
-              <div className="bg-white rounded-xl p-8 shadow-md hover:shadow-lg transition-all duration-300 border border-neutral-100 group flex flex-col items-start">
+              <div className="bg-white rounded-xl p-8 transition-all duration-300 border border-neutral-100 group flex flex-col items-start">
                 <div className="mb-5 inline-flex items-center justify-center w-12 h-12 rounded-xl bg-violet-100 text-violet-700 group-hover:bg-violet-700 group-hover:text-white transition-colors duration-300">
                   <BarChart className="w-6 h-6" />
                 </div>
@@ -168,7 +198,7 @@ export default function LandingPage() {
               </div>
 
               {/* Card 4 */}
-              <div className="bg-white rounded-xl p-8 shadow-md hover:shadow-lg transition-all duration-300 border border-neutral-100 group flex flex-col items-start">
+              <div className="bg-white rounded-xl p-8 transition-all duration-300 border border-neutral-100 group flex flex-col items-start">
                 <div className="mb-5 inline-flex items-center justify-center w-12 h-12 rounded-xl bg-violet-100 text-violet-700 group-hover:bg-violet-700 group-hover:text-white transition-colors duration-300">
                   <Zap className="w-6 h-6" />
                 </div>
@@ -282,6 +312,35 @@ export default function LandingPage() {
                   </AccordionContent>
                 </AccordionItem>
               </Accordion>
+            </div>
+          </div>
+        </section>
+
+        {/* Testimonials section */}
+        <section className="w-full bg-white py-16" id="testimonials">
+          <div className="max-w-5xl mx-auto px-4">
+            <div className="text-center mb-12">
+              <Badge
+                variant="outline"
+                className="font-medium mb-4 text-sm px-4 py-2 bg-violet-100 border-violet-200 text-violet-800"
+              >
+                Testimonials
+              </Badge>
+              <h2 className="text-3xl sm:text-4xl font-extrabold text-black mb-4">
+                What our users say
+              </h2>
+            </div>
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+              {userTestimonials.map((testimonial, idx) => (
+                <div
+                  key={idx}
+                  className="bg-white rounded-xl p-6 border border-neutral-100 flex flex-col"
+                >
+                  <div className="font-bold text-black text-lg mb-1">{testimonial.name}</div>
+                  <div className="text-violet-700 text-sm mb-3">{testimonial.headline}</div>
+                  <div className="text-neutral-700 text-base">{testimonial.text}</div>
+                </div>
+              ))}
             </div>
           </div>
         </section>

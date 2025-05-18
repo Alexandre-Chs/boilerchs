@@ -22,4 +22,21 @@ export default class EmailService {
         })
     })
   }
+
+  static async sendEmailWelcome(to: string, subject: string, username: string) {
+    await mail.send((message) => {
+      message
+        .to(to)
+        .from(this.from)
+        .subject(subject)
+        .htmlView('emails/welcome_mjml', {
+          companyLogoUrl: this.companyLogoUrl,
+          projectName: this.companyName,
+          year: this.year,
+          appUrl: this.appUrl,
+          username,
+          dashboardUrl: `${this.appUrl}/dashboard`,
+        })
+    })
+  }
 }

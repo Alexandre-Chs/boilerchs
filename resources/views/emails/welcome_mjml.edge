@@ -1,0 +1,60 @@
+@mjml({
+  fonts: {
+    Roboto: 'https://fonts.googleapis.com/css?family=Roboto:400,700'
+  }
+})
+  <mjml>
+    <mj-head>
+      <mj-attributes>
+        <mj-all font-family="Roboto, Arial, sans-serif" />
+        <mj-text font-size="16px" color="#333333" />
+        <mj-button
+          background-color="#4F46E5"
+          color="#ffffff"
+          font-size="16px"
+          border-radius="4px"
+          padding="16px 32px"
+        />
+      </mj-attributes>
+    </mj-head>
+    <mj-body background-color="#f4f4f7">
+      <mj-section padding="32px 0">
+        <mj-column width="100%">
+          @if(companyLogoUrl)
+            <mj-image src="{{ companyLogoUrl }}" alt="{{ projectName }} logo" width="48px" align="center" />
+          @end
+          <mj-text align="center" font-size="22px" font-weight="bold" color="#22223b" padding-bottom="8px">
+            Welcome to {{ projectName }}!
+          </mj-text>
+          <mj-divider border-color="#4F46E5" border-width="2px" width="60px" />
+          <mj-text color="#555" padding-top="16px">
+            Hello {{ username }},
+          </mj-text>
+          <mj-text color="#555" padding-bottom="16px">
+            We're excited to have you on board!<br />
+            Your account has been created successfully. You can now explore all the features {{ projectName }} has to offer.
+          </mj-text>
+          <mj-button
+            href="{{ dashboardUrl }}"
+            align="center"
+            background-color="#4F46E5"
+            color="#ffffff"
+            font-size="16px"
+            font-weight="bold"
+            border-radius="4px"
+            padding="16px 32px"
+          >
+            Go to application
+          </mj-button>
+          <mj-text color="#888" font-size="14px" padding-top="24px">
+            If the button doesn't work, copy and paste this link into your browser:<br />
+            <a href="{{ dashboardUrl }}" style="color:#4F46E5;">{{ dashboardUrl }}</a>
+          </mj-text>
+          <mj-text align="center" color="#bbb" font-size="12px" padding-top="32px">
+            &copy; {{ year }} {{ projectName }}. All rights reserved.
+          </mj-text>
+        </mj-column>
+      </mj-section>
+    </mj-body>
+  </mjml>
+@end

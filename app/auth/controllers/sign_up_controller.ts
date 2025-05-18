@@ -1,5 +1,6 @@
 import { signUpValidator } from '#auth/validators'
 import DiscordService from '#services/discord_service'
+import EmailService from '#services/email_service'
 import User from '#users/models/user'
 import type { HttpContext } from '@adonisjs/core/http'
 
@@ -14,6 +15,8 @@ export default class SignUpController {
     await DiscordService.sendDiscordMessage(
       'A new user has signed up from credentials! \n' + `Username: ${username}\nEmail: ${email}`
     )
+
+    await EmailService.sendEmailWelcome(email, 'Welcome to our platform!', username)
     await auth.use('web').login(user)
 
     response.redirect('/dashboard')

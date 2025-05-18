@@ -51,5 +51,12 @@ export default await Env.create(new URL('../', import.meta.url), {
   |----------------------------------------------------------
   */
   GOOGLE_CLIENT_ID: Env.schema.string(),
-  GOOGLE_CLIENT_SECRET: Env.schema.string()
+  GOOGLE_CLIENT_SECRET: Env.schema.string(),
+
+  /*
+  |----------------------------------------------------------
+  | Variables for configuring discord notification
+  |----------------------------------------------------------
+  */
+  DISCORD_WEBHOOK_URL: Env.schema.string(),
 })

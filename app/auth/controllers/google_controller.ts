@@ -1,3 +1,4 @@
+import DiscordService from '#services/discord_service'
 import User from '#users/models/user'
 import type { HttpContext } from '@adonisjs/core/http'
 
@@ -34,6 +35,11 @@ export default class GoogleController {
         username: googleUser?.name,
         terms: true,
       })
+
+      await DiscordService.sendDiscordMessage(
+        'A new user has signed up from Google! \n' +
+          `Username: ${googleUser?.name}\nEmail: ${googleEmail}`
+      )
     }
 
     await auth.use('web').login(user)

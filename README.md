@@ -60,12 +60,21 @@ A modern fullstack boilerplate to kickstart your next project.
 - Mailer is preconfigured for Resend (and SMTP).
 - Email templates (Edge + MJML) are ready for:
   - Password reset
+  - Welcome email
   - (Add your own easily)
 - Local development with Mailpit
 
 ---
 
-### 6. Modular & Extensible
+### 6. Discord Notifications for User Actions
+
+- Receive instant notifications on Discord for key user actions (sign up from credentials or Google provider).
+- Easily configurable via a Discord webhook.
+- Useful for monitoring activity and onboarding in real time.
+
+---
+
+### 7. Modular & Extensible
 
 - Clean separation of concerns (auth, dashboard, services, etc.)
 - Easily extend or swap out UI, mailers, or providers.

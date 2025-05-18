@@ -316,8 +316,12 @@ export default function LandingPage() {
           </div>
         </section>
 
+        <div className="w-full flex justify-center items-center py-24 bg-white -mt-8 md:mt-0">
+          <div className="h-1 w-24 bg-neutral-200 rounded-full opacity-80" />
+        </div>
+
         {/* Testimonials section */}
-        <section className="w-full bg-white py-16" id="testimonials">
+        <section className="w-full bg-white" id="testimonials">
           <div className="max-w-5xl mx-auto px-4">
             <div className="text-center mb-12">
               <Badge
